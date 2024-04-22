@@ -1,0 +1,2 @@
+1.Créer un fichier fonctions.php à la racine du projet et y rajouter des fonctionc utilitaires; 
+autoloader ce fichier pour que ces fonctions soient disponible partout. 

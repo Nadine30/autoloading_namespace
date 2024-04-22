@@ -49,7 +49,7 @@ class UserManager
 
     public function modifier(User $user, string $email, string $password): void
     {
-        $sql= "UPDATE Users SET email=$email and password=$password WHERE id=$user->id";
+        $sql= "UPDATE Users SET email='$email', password='$password' WHERE id=$user->id";
         try
         {
             $this->database->exec($sql);
@@ -75,7 +75,7 @@ class UserManager
         }
     }
 
-    public function all(): ?User 
+    public function all(): array 
     {
         $sql="SELECT * FROM Users";
         try 
@@ -84,17 +84,18 @@ class UserManager
             if ($stmt->rowCount() > 0)
             {
                 $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            }
-            else
-            {
-                return null;
+                $tableau=[];
+                foreach ($data as $utilisateur)
+                {
+                    $tableau[]=new User($utilisateur['id'], $utilisateur['email'],$utilisateur['password']);
+                }
             }
         }
         catch(Exception $e)
             {
                 $e->getMessage();
             }
-            return new User($data['id'], $data['email'], $data['password']);
+            return $tableau;
     }
     
     
