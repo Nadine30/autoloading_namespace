@@ -14,3 +14,6 @@ $manager->ajouter($user);
 $users= $manager->all();
 print_r($users);
 
+$tab=['bonjour','bonsoir'];
+$tableau1= new Utilitaire\Fonction($tab);
+

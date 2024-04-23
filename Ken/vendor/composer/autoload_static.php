@@ -9,11 +9,16 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
     public static $prefixLengthsPsr4 = array (
         'U' => 
         array (
+            'Utilitaire\\' => 11,
             'Utilisateurs\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Utilitaire\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/fonction.php',
+        ),
         'Utilisateurs\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',

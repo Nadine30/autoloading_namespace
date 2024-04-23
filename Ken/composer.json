@@ -1,7 +1,10 @@
 {
     "autoload":{
         "psr-4": {
-            "Utilisateurs\\":"src"
+            "Utilisateurs\\":"src",
+            "Utilitaire\\":"fonction.php"
         }
     }
 }
+
+
